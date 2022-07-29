@@ -1,0 +1,18 @@
+.container {
+  width: 500px;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr 50px 50px;
+}
+
+.name {
+  border: 1px solid gray;
+}
+.amount {
+  border: 1px solid gray;
+}
+.total {
+  border: 1px solid gray;
+}
