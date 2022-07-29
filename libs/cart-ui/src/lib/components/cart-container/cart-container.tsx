@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CartItem from '../cart-item/cart-item';
 
 import styles from './cart-container.module.scss';
 
@@ -17,11 +18,7 @@ export function CartContainer(props: CartContainerProps) {
       <h2>Shopping Cart</h2>
       <div className={styles['cart-list']}>
         {cart.map((item) => (
-          <div className={styles['cart-item']}>
-            <div className={styles['name']}>{item.name}</div>
-            <div className={styles['amount']}>{item.amount}</div>
-            <div className={styles['total']}>{item.total}</div>
-          </div>
+          <CartItem key={item.id} animal={item}></CartItem>
         ))}
       </div>
     </div>
