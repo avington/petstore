@@ -1,0 +1,7 @@
+{
+  "cart": [
+    { "id": "1", "name": "Zebra", "amount": 100, "total": 1 },
+    { "id": "2", "name": "Moose", "amount": 50, "total": 1 },
+    { "id": "3", "name": "Dog", "amount": 25, "total": 5 }
+  ]
+}

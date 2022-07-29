@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { AnimalModel } from '../../models/animal.model';
 import CartItem from '../cart-item/cart-item';
 
 import styles from './cart-container.module.scss';
@@ -7,11 +8,16 @@ import styles from './cart-container.module.scss';
 export interface CartContainerProps {}
 
 export function CartContainer(props: CartContainerProps) {
-  const [cart, setCart] = useState([
-    { id: '1', name: 'Zebra', amount: 100, total: 1 },
-    { id: '2', name: 'Moose', amount: 50, total: 1 },
-    { id: '3', name: 'Dog', amount: 25, total: 5 },
-  ]);
+  const [cart, setCart] = useState<AnimalModel[]>([]);
+
+  useEffect(() => {
+    fetch('/assets/cart.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const items = data.cart as AnimalModel[];
+        setCart(items);
+      });
+  }, []);
 
   return (
     <div className={styles['container']}>
