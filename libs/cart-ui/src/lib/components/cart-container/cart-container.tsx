@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import useCartAnimals from '../../hooks/use-cart-animals/use-cart-animals';
-import { AnimalModel } from '../../models/animal.model';
 import CartItem from '../cart-item/cart-item';
 
 import styles from './cart-container.module.scss';
