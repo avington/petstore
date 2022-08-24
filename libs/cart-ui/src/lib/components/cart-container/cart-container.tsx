@@ -17,7 +17,7 @@ export function CartContainer(props: CartContainerProps) {
       <h2>Shopping Cart</h2>
       <div className={styles['cart-list']}>
         {cart.map((item) => (
-          <div className={styles['cart-item']}>
+          <div className={styles['cart-item']} key={item.id}>
             <div className={styles['name']}>{item.name}</div>
             <div className={styles['amount']}>{item.amount}</div>
             <div className={styles['total']}>{item.total}</div>
